@@ -120,7 +120,7 @@ body {
   font-size: clamp(2.3rem, 4.8vw, 3.8rem);
   color: var(--accent-gold);
   display: block;
-  line-height: 0.95;
+  line-height: 1.05;
   white-space: nowrap;
   text-align: center;
 }
@@ -132,7 +132,7 @@ body {
 
 #win-percentage {
   font-size: clamp(2rem, 4.2vw, 3.2rem);
-  line-height: 0.95;
+  line-height: 1.05;
   letter-spacing: -0.01em;
 }
 
@@ -141,7 +141,7 @@ body {
   display: block;
   font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   color: rgba(255, 255, 255, 0.7);
   min-height: 1.2rem;
 }
@@ -196,6 +196,23 @@ body {
   max-height: calc((5 * var(--match-row-height)) + (4 * var(--match-gap)));
   overflow-y: auto;
   padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 197, 66, 0.7) rgba(7, 7, 8, 0.85);
+}
+
+.matches-list::-webkit-scrollbar {
+  width: 0.55rem;
+}
+
+.matches-list::-webkit-scrollbar-track {
+  background: rgba(7, 7, 8, 0.85);
+  border-radius: 999px;
+}
+
+.matches-list::-webkit-scrollbar-thumb {
+  background: rgba(244, 197, 66, 0.7);
+  border-radius: 999px;
+  border: 2px solid rgba(7, 7, 8, 0.9);
 }
 
 .matches-item {
