@@ -124,6 +124,12 @@ body {
   text-align: center;
 }
 
+#win-percentage {
+  font-size: clamp(2.1rem, 4.2vw, 3.3rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
 .stat-label {
   margin-bottom: 0.35rem;
   display: block;
