@@ -102,16 +102,16 @@ body {
 
 .stat-block {
   min-width: 0;
-  padding: 1.15rem 1.1rem 1rem;
+  padding: 1.2rem 1.1rem;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0 0 0 1px rgba(244, 197, 66, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: minmax(1.2rem, auto) minmax(2.6rem, auto) minmax(1.4rem, auto);
   align-items: center;
-  gap: 0.4rem;
+  justify-items: center;
+  row-gap: 0.35rem;
 }
 
 .stat-value {
@@ -131,21 +131,23 @@ body {
 }
 
 .stat-label {
-  margin-bottom: 0.35rem;
+  margin: 0;
   display: block;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.7);
+  min-height: 1.2rem;
 }
 
 .stat-subtext {
-  margin-top: 0.4rem;
+  margin-top: 0;
   display: block;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
+  min-height: 1.4rem;
 }
 
 .stat-subvalue {
