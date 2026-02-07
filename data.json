@@ -1,4 +1,11 @@
 {
   "poeng_tatt": 21,
-  "poeng_mulig": 30
+  "poeng_mulig": 30,
+  "kamper": [
+    { "opponent": "Arsenal", "score": "3–2", "result": "W" },
+    { "opponent": "Chelsea", "score": "1–1", "result": "D" },
+    { "opponent": "Liverpool", "score": "2–1", "result": "W" },
+    { "opponent": "Leicester", "score": "1–0", "result": "W" },
+    { "opponent": "Brighton", "score": "0–1", "result": "L" }
+  ]
 }

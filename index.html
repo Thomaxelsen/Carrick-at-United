@@ -8,23 +8,22 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <h1>Carrick at Manchester United</h1>
-      <p class="subtitle">Points efficiency overview</p>
-    </header>
+    <main class="hero">
+      <header class="site-header">
+        <h1>Carrick at Manchester United</h1>
+        <p class="subtitle">Points efficiency overview</p>
+      </header>
 
-    <main>
-      <section class="image-container">
-        <img
-          src="assets/carrick-placeholder.jpg"
-          alt="Placeholder image of Michael Carrick in Manchester United colors"
-          onerror="this.style.display='none'"
-        />
-      </section>
+      <section class="stats-panel" aria-live="polite">
+        <div class="stats-header">
+          <span class="percentage-value" id="percentage">--%</span>
+          <span class="percentage-label">Points taken</span>
+        </div>
 
-      <section class="percentage-card" aria-live="polite">
-        <span class="percentage-value" id="percentage">--%</span>
-        <span class="percentage-label">Points taken</span>
+        <div class="matches">
+          <div class="matches-title">Matches played</div>
+          <ul class="matches-list" id="matches"></ul>
+        </div>
       </section>
     </main>
   </body>
