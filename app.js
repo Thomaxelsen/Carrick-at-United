@@ -1,26 +1,25 @@
-async function loadCarrickStats() {
-  const response = await fetch("data.json");
-  if (!response.ok) {
-    throw new Error(`Failed to load data.json: ${response.status}`);
+const percentageEl = document.getElementById('percentage');
+
+const formatPercentage = (value) => `${value.toFixed(1)}%`;
+
+const renderPercentage = ({ poeng_tatt, poeng_mulig }) => {
+  if (!Number.isFinite(poeng_tatt) || !Number.isFinite(poeng_mulig) || poeng_mulig === 0) {
+    percentageEl.textContent = '--%';
+    return;
   }
 
-  const data = await response.json();
-  const matches = Array.isArray(data.matches) ? data.matches : [];
+  const percentage = (poeng_tatt / poeng_mulig) * 100;
+  percentageEl.textContent = formatPercentage(percentage);
+};
 
-  const totalPoints = matches.reduce((sum, match) => sum + (match.points || 0), 0);
-  const maxPoints = matches.length * 3;
-  const percentage = maxPoints === 0 ? 0 : Math.round((totalPoints / maxPoints) * 100);
-
-  let output = document.querySelector("#points-summary");
-  if (!output) {
-    output = document.createElement("div");
-    output.id = "points-summary";
-    document.body.appendChild(output);
-  }
-
-  output.textContent = `Poeng: ${totalPoints} / ${maxPoints} (${percentage}%)`;
-}
-
-loadCarrickStats().catch((error) => {
-  console.error(error);
-});
+fetch('data.json')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Could not load data.json');
+    }
+    return response.json();
+  })
+  .then(renderPercentage)
+  .catch(() => {
+    percentageEl.textContent = '--%';
+  });

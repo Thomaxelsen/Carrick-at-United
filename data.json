@@ -1,26 +1,4 @@
 {
-  "_comment": "Legg til nye kamper ved å legge et nytt objekt i 'matches'-listen med date (YYYY-MM-DD), opponent, result (W/D/L), points (3/1/0) og era.",
-  "matches": [
-    {
-      "date": "2021-11-24",
-      "opponent": "Villarreal",
-      "result": "W",
-      "points": 3,
-      "era": "interim-2021"
-    },
-    {
-      "date": "2021-11-28",
-      "opponent": "Chelsea",
-      "result": "D",
-      "points": 1,
-      "era": "interim-2021"
-    },
-    {
-      "date": "2021-12-02",
-      "opponent": "Arsenal",
-      "result": "W",
-      "points": 3,
-      "era": "interim-2021"
-    }
-  ]
+  "poeng_tatt": 21,
+  "poeng_mulig": 30
 }
