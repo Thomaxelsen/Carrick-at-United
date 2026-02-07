@@ -23,22 +23,44 @@ body {
 .hero {
   min-height: 100vh;
   background-color: #050505;
-  background-image: linear-gradient(
-      90deg,
-      rgba(5, 5, 5, 0.2) 0%,
-      rgba(5, 5, 5, 0.35) 38%,
-      rgba(5, 5, 5, 0.82) 68%,
-      rgba(5, 5, 5, 0.95) 100%
-    ),
-    url('Carrick.png');
-  background-size: cover;
-  background-position: left 18% center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: clamp(1.5rem, 3.5vw, 3.5rem);
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('Carrick.png');
+  background-size: cover;
+  background-position: center 18%;
+  background-repeat: no-repeat;
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 5, 5, 0.25) 0%,
+    rgba(5, 5, 5, 0.45) 38%,
+    rgba(5, 5, 5, 0.82) 68%,
+    rgba(5, 5, 5, 0.95) 100%
+  );
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .site-header {
@@ -142,6 +164,7 @@ body {
   .hero {
     flex-direction: column;
     gap: 2.5rem;
+    align-items: stretch;
   }
 
   .site-header {
@@ -155,5 +178,45 @@ body {
   .stats-header,
   .matches-title {
     text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero::before {
+    background-position: center 12%;
+  }
+
+  .stats-panel {
+    padding: 2rem 1.75rem;
+  }
+
+  .site-header h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero {
+    align-items: flex-start;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero::before {
+    background-position: 60% 20%;
+  }
+
+  .site-header {
+    max-width: 240px;
+  }
+
+  .stats-panel {
+    width: min(340px, 52vw);
+    padding: 1.75rem;
+    gap: 1.25rem;
+  }
+
+  .percentage-value {
+    font-size: clamp(3.2rem, 7vw, 5rem);
   }
 }
