@@ -18,7 +18,9 @@ const renderMatches = (matches = []) => {
     return;
   }
 
-  matches.forEach(({ opponent, score, result }) => {
+  const orderedMatches = [...matches].reverse();
+
+  orderedMatches.forEach(({ opponent, score, result }) => {
     const item = document.createElement('li');
     item.className = 'matches-item';
 
