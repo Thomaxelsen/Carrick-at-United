@@ -183,7 +183,7 @@ body {
 
 @media (max-width: 640px) {
   .hero::before {
-    background-position: 75% 12%;
+    background-position: center 12%;
   }
 
   .stats-panel {
