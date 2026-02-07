@@ -124,6 +124,11 @@ body {
   text-align: center;
 }
 
+.stat-block--win .stat-label,
+.stat-block--win .stat-value {
+  transform: translateX(-2px);
+}
+
 #win-percentage {
   font-size: clamp(2rem, 4.2vw, 3.2rem);
   line-height: 0.95;
