@@ -84,7 +84,7 @@ body {
   border: 1px solid rgba(244, 197, 66, 0.35);
   border-radius: 24px;
   padding: 2.5rem;
-  width: min(360px, 45vw);
+  width: min(380px, 48vw);
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(14px);
   display: flex;
@@ -100,12 +100,17 @@ body {
   text-align: right;
 }
 
+.stat-block {
+  min-width: 0;
+}
+
 .stat-value {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(4.2rem, 9vw, 6.8rem);
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
   color: var(--accent-gold);
   display: block;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .stat-label {
