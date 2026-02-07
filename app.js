@@ -1,7 +1,10 @@
-const percentageEl = document.getElementById('percentage');
+const pointsPerGameEl = document.getElementById('points-per-game');
+const winPercentageEl = document.getElementById('win-percentage');
+const pointPercentageEl = document.getElementById('point-percentage');
 const matchesEl = document.getElementById('matches');
 
 const formatPercentage = (value) => `${value.toFixed(1)}%`;
+const formatRate = (value) => value.toFixed(2);
 
 const renderMatches = (matches = []) => {
   if (!matchesEl) {
@@ -37,12 +40,26 @@ const renderMatches = (matches = []) => {
   });
 };
 
-const renderPercentage = ({ poeng_tatt, poeng_mulig, kamper }) => {
-  if (!Number.isFinite(poeng_tatt) || !Number.isFinite(poeng_mulig) || poeng_mulig === 0) {
-    percentageEl.textContent = '--%';
+const renderStats = ({ kamper }) => {
+  const matches = Array.isArray(kamper) ? kamper : [];
+  const matchesPlayed = matches.length;
+  const wins = matches.filter(({ result }) => result === 'W').length;
+  const draws = matches.filter(({ result }) => result === 'D').length;
+  const losses = matches.filter(({ result }) => result === 'L').length;
+  const pointsTaken = wins * 3 + draws;
+
+  if (matchesPlayed === 0) {
+    pointsPerGameEl.textContent = '--';
+    winPercentageEl.textContent = '--%';
+    pointPercentageEl.textContent = '--%';
   } else {
-    const percentage = (poeng_tatt / poeng_mulig) * 100;
-    percentageEl.textContent = formatPercentage(percentage);
+    const pointsPerGame = pointsTaken / matchesPlayed;
+    const winPercentage = (wins / matchesPlayed) * 100;
+    const pointPercentage = (pointsTaken / (matchesPlayed * 3)) * 100;
+
+    pointsPerGameEl.textContent = formatRate(pointsPerGame);
+    winPercentageEl.textContent = formatPercentage(winPercentage);
+    pointPercentageEl.textContent = formatPercentage(pointPercentage);
   }
 
   renderMatches(kamper);
@@ -55,7 +72,9 @@ fetch('data.json')
     }
     return response.json();
   })
-  .then(renderPercentage)
+  .then(renderStats)
   .catch(() => {
-    percentageEl.textContent = '--%';
+    pointsPerGameEl.textContent = '--';
+    winPercentageEl.textContent = '--%';
+    pointPercentageEl.textContent = '--%';
   });
