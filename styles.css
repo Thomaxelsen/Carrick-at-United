@@ -109,10 +109,10 @@ body {
   background: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0 0 0 1px rgba(244, 197, 66, 0.08);
   display: grid;
-  grid-template-rows: minmax(1.2rem, auto) minmax(2.6rem, auto) minmax(1.4rem, auto);
+  grid-template-rows: auto auto auto;
   align-items: center;
   justify-items: center;
-  row-gap: 0.35rem;
+  row-gap: 0.4rem;
 }
 
 .stat-value {
@@ -131,17 +131,17 @@ body {
 }
 
 #win-percentage {
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
-  line-height: 1.05;
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  line-height: 0.95;
   letter-spacing: -0.01em;
 }
 
 .stat-label {
   margin: 0;
   display: block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: rgba(255, 255, 255, 0.7);
   min-height: 1.2rem;
 }
