@@ -84,7 +84,7 @@ body {
   border: 1px solid rgba(244, 197, 66, 0.35);
   border-radius: 24px;
   padding: 2.5rem;
-  width: min(360px, 45vw);
+  width: min(380px, 48vw);
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(14px);
   display: flex;
@@ -94,24 +94,82 @@ body {
 }
 
 .stats-header {
-  text-align: right;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  text-align: center;
 }
 
-.percentage-value {
+.stat-block {
+  min-width: 0;
+  padding: 1.2rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(244, 197, 66, 0.08);
+  display: grid;
+  grid-template-rows: minmax(1.2rem, auto) minmax(2.6rem, auto) minmax(1.4rem, auto);
+  align-items: center;
+  justify-items: center;
+  row-gap: 0.35rem;
+}
+
+.stat-value {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(4.2rem, 9vw, 6.8rem);
+  font-size: clamp(2.3rem, 4.8vw, 3.8rem);
   color: var(--accent-gold);
   display: block;
-  line-height: 1;
+  line-height: 0.95;
+  white-space: nowrap;
+  text-align: center;
 }
 
-.percentage-label {
-  margin-bottom: 0.75rem;
+.stat-block--win .stat-label,
+.stat-block--win .stat-value {
+  transform: translateX(-2px);
+}
+
+#win-percentage {
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.stat-label {
+  margin: 0;
   display: block;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.7);
+  min-height: 1.2rem;
+}
+
+.stat-subtext {
+  margin-top: 0;
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  min-height: 1.4rem;
+}
+
+.stat-subvalue {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15rem;
+  color: var(--accent-white);
+  letter-spacing: 0.04em;
+}
+
+#point-percentage {
+  font-size: 0.95rem;
+  opacity: 0.65;
+}
+
+#win-percentage {
+  color: var(--accent-gold);
 }
 
 .matches {
@@ -179,6 +237,10 @@ body {
   .matches-title {
     text-align: left;
   }
+
+  .stats-header {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -216,7 +278,7 @@ body {
     gap: 1.25rem;
   }
 
-  .percentage-value {
+  .stat-value {
     font-size: clamp(3.2rem, 7vw, 5rem);
   }
 }
