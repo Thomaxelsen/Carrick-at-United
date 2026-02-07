@@ -106,13 +106,19 @@ body {
 .matches-list {
   list-style: none;
   display: grid;
-  gap: 0.9rem;
+  --match-row-height: 2.2rem;
+  --match-gap: 0.9rem;
+  gap: var(--match-gap);
+  max-height: calc((5 * var(--match-row-height)) + (4 * var(--match-gap)));
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
 .matches-item {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  min-height: var(--match-row-height);
   font-size: 0.95rem;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.85);
