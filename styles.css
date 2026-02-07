@@ -22,10 +22,17 @@ body {
 
 .hero {
   min-height: 100vh;
-  background-image: linear-gradient(135deg, rgba(10, 10, 11, 0.65), rgba(15, 15, 16, 0.4)),
+  background-color: #050505;
+  background-image: linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.2) 0%,
+      rgba(5, 5, 5, 0.35) 38%,
+      rgba(5, 5, 5, 0.82) 68%,
+      rgba(5, 5, 5, 0.95) 100%
+    ),
     url('Carrick.png');
   background-size: cover;
-  background-position: center 15%;
+  background-position: left 18% center;
   background-repeat: no-repeat;
   display: flex;
   align-items: flex-start;
