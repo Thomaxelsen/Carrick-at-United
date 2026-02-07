@@ -197,7 +197,7 @@ body {
 
 @media (max-height: 520px) and (orientation: landscape) {
   .hero {
-    align-items: flex-end;
+    align-items: flex-start;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
