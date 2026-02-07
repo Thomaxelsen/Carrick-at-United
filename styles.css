@@ -125,9 +125,9 @@ body {
 }
 
 #win-percentage {
-  font-size: clamp(2.1rem, 4.2vw, 3.3rem);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
 }
 
 .stat-label {
@@ -164,9 +164,7 @@ body {
 }
 
 #win-percentage {
-  color: var(--accent-white);
-  font-weight: 700;
-  text-shadow: 0 6px 16px rgba(244, 197, 66, 0.35);
+  color: var(--accent-gold);
 }
 
 .matches {
