@@ -95,13 +95,14 @@ body {
 
 .stats-header {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
   text-align: center;
 }
 
 .stat-block {
   min-width: 0;
+  min-height: clamp(7.25rem, 10vw, 8.25rem);
   padding: 1.2rem 1.1rem;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -119,7 +120,7 @@ body {
   font-size: clamp(2.3rem, 4.8vw, 3.8rem);
   color: var(--accent-gold);
   display: block;
-  line-height: 0.95;
+  line-height: 1.05;
   white-space: nowrap;
   text-align: center;
 }
@@ -195,6 +196,23 @@ body {
   max-height: calc((5 * var(--match-row-height)) + (4 * var(--match-gap)));
   overflow-y: auto;
   padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 197, 66, 0.7) rgba(7, 7, 8, 0.85);
+}
+
+.matches-list::-webkit-scrollbar {
+  width: 0.55rem;
+}
+
+.matches-list::-webkit-scrollbar-track {
+  background: rgba(7, 7, 8, 0.85);
+  border-radius: 999px;
+}
+
+.matches-list::-webkit-scrollbar-thumb {
+  background: rgba(244, 197, 66, 0.7);
+  border-radius: 999px;
+  border: 2px solid rgba(7, 7, 8, 0.9);
 }
 
 .matches-item {
