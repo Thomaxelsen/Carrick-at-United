@@ -275,6 +275,16 @@ body {
   }
 }
 
+@media (max-width: 640px) and (orientation: portrait) {
+  .hero {
+    padding-bottom: 0;
+  }
+
+  .stats-panel {
+    margin-top: clamp(2.5rem, 18vh, 8rem);
+  }
+}
+
 @media (max-height: 520px) and (orientation: landscape) {
   .hero {
     align-items: flex-start;
