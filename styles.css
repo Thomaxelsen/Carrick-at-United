@@ -281,7 +281,7 @@ body {
   }
 
   .stats-panel {
-    margin-top: clamp(2.5rem, 18vh, 8rem);
+    margin-top: clamp(12rem, 50vh, 18.5rem);
   }
 }
 
