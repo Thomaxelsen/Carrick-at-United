@@ -17,11 +17,13 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   color: var(--accent-white);
   min-height: 100vh;
+  min-height: 100svh;
   background: var(--deep-black);
 }
 
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   background-color: #050505;
   display: flex;
   align-items: flex-start;
@@ -282,7 +284,7 @@ body {
 
   .hero::before,
   .hero::after {
-    position: fixed;
+    position: absolute;
   }
 
   .site-header {
