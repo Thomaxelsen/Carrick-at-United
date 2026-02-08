@@ -280,6 +280,16 @@ body {
     padding-bottom: 0;
   }
 
+  .hero::before,
+  .hero::after {
+    position: fixed;
+  }
+
+  .site-header {
+    position: sticky;
+    top: clamp(1rem, 4vw, 1.5rem);
+  }
+
   .stats-panel {
     margin-top: clamp(12rem, 50vh, 18.5rem);
   }
