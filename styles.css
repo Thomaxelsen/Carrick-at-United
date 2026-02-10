@@ -17,11 +17,13 @@ body {
   font-family: 'Source Sans 3', sans-serif;
   color: var(--accent-white);
   min-height: 100vh;
+  min-height: 100svh;
   background: var(--deep-black);
 }
 
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   background-color: #050505;
   display: flex;
   align-items: flex-start;
@@ -272,6 +274,26 @@ body {
 
   .site-header h1 {
     font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .hero {
+    padding-bottom: 0;
+  }
+
+  .hero::before,
+  .hero::after {
+    position: absolute;
+  }
+
+  .site-header {
+    position: sticky;
+    top: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .stats-panel {
+    margin-top: clamp(12rem, 50vh, 18.5rem);
   }
 }
 
