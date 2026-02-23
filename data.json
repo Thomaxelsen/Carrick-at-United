@@ -1,6 +1,6 @@
 {
-  "poeng_tatt": 20,
-  "poeng_mulig": 24,
+  "poeng_tatt": 23,
+  "poeng_mulig": 27,
   "kamper": [
     { "opponent": "Villarreal", "score": "0–2", "result": "W" },
     { "opponent": "Chelsea", "score": "1–1", "result": "D" },
@@ -9,6 +9,7 @@
     { "opponent": "Arsenal", "score": "2–3", "result": "W" },
     { "opponent": "Fulham", "score": "3–2", "result": "W" },
     { "opponent": "Tottenham", "score": "2–0", "result": "W" },
-    { "opponent": "West Ham", "score": "1–1", "result": "D" }
+    { "opponent": "West Ham", "score": "1–1", "result": "D" },
+    { "opponent": "Everton", "score": "0–1", "result": "W" }
   ]
 }
