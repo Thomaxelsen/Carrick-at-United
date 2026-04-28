@@ -1,6 +1,6 @@
 {
-  "poeng_tatt": 33,
-  "poeng_mulig": 45,
+  "poeng_tatt": 36,
+  "poeng_mulig": 48,
   "kamper": [
     { "opponent": "Villarreal", "score": "0–2", "result": "W" },
     { "opponent": "Chelsea", "score": "1–1", "result": "D" },
@@ -16,6 +16,7 @@
     { "opponent": "Aston Villa", "score": "3–1", "result": "W" },
     { "opponent": "AFC Bournemouth", "score": "2–2", "result": "D" },
     { "opponent": "Leeds", "score": "1–2", "result": "L" },
-    { "opponent": "Chelsea", "score": "0–1", "result": "W" }
+    { "opponent": "Chelsea", "score": "0–1", "result": "W" },
+    { "opponent": "Brentford", "score": "2–1", "result": "W" }
   ]
 }
